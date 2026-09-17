@@ -4,20 +4,20 @@ using System.Text;
 
 namespace POO.Models
 {
-    class SuperHeroe
+    class SuperHeroe : Heroe
     {
         private string _Nombre;
         public int Id;
-        public string Nombre 
+        public override string Nombre
         {
             get
             {
-                return _Nombre; 
+                return _Nombre;
             }
             set
             {
                 _Nombre = value.Trim();
-            } 
+            }
         }
         public string NombreIdentidadSecreta
         {
@@ -45,6 +45,17 @@ namespace POO.Models
             }
 
             return sb.ToString();
+        }
+
+        public override string SalvarElMundo()
+        {
+            return $"{NombreIdentidadSecreta} ha salvado el mundo";
+        }
+
+        public override string SalvarLaTierra()
+        {
+           // return base.SalvarLaTierra();
+           return $"{NombreIdentidadSecreta} ha salvado la tierra";
         }
     }
 }
